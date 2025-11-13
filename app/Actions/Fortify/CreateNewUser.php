@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
-// J'ai supprimé 'use PasswordValidationRules;' car vous utilisez la validation explicite.
-// J'ai aussi retiré Log et Auth car ils sont mieux gérés en dehors de cette méthode.
-
 class CreateNewUser implements CreatesNewUsers
 {
     /**
@@ -38,7 +35,10 @@ class CreateNewUser implements CreatesNewUsers
 
             // RÈGLES D'EMAIL
             'email' => [
-                'required', 'string', 'email', 'max:255',
+                'required',
+                'string',
+                'email',
+                'max:255',
                 Rule::unique(User::class),
             ],
 
@@ -52,10 +52,10 @@ class CreateNewUser implements CreatesNewUsers
                 'confirmed',
             ],
         ], [
-            // Messages de validation personnalisés (pour l'email et le mot de passe)
-            'email.unique'   => 'Cet email est déjà utilisé.',
+            // Messages de validation personnalisés (avec indentation standard corrigée)
+            'email.unique' => 'Cet email est déjà utilisé.',
             'password.regex' => 'Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.',
-            'cgu.accepted'   => 'Vous devez accepter les conditions générales d\'utilisation.',
+            'cgu.accepted' => 'Vous devez accepter les conditions générales d\'utilisation.',
             // ... Ajoutez d'autres messages si nécessaire
         ])->validate();
 
@@ -77,9 +77,6 @@ class CreateNewUser implements CreatesNewUsers
 
         // 4. ENVOI DU MAIL (La classe Mail doit exister : \App\Mail\TokenMail)
         // Mail::to($utilisateur->email)->send(new \App\Mail\TokenMail($utilisateur));
-
-        // J'ai mis en commentaire l'envoi de mail pour éviter les erreurs d'autoloading si la classe n'existe pas.
-        // Vous pouvez la décommenter une fois que vous avez créé la Mailable TokenMail.
 
         return $utilisateur;
     }
