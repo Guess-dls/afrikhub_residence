@@ -1,0 +1,54 @@
+    /* Configuration Tailwind pour utiliser la police Inter et styles globaux */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+    :root {
+        --primary-color: #4f46e5;
+        /* Indigo 600 */
+        --danger-color: #ef4444;
+        /* Red 500 */
+        --success-color: #10b981;
+        /* Emerald 500 */
+        --warning-color: #f59e0b;
+        /* Amber 500 */
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
+        /* Gray 100 */
+        min-height: 100vh;
+    }
+
+    /* Style spécifique pour la Sidebar */
+    #sidebar {
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 350px;
+        z-index: 50;
+        height: 100%;
+        background-color: #1f2937;
+        /* Dark Gray 800 */
+        padding: 1.5rem;
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #sidebar.active {
+        transform: translateX(0);
+    }
+
+    /* Assurez-vous que le main content a assez de marge pour le header fixe */
+    .pt-44 {
+        /* 176px */
+        padding-top: 11rem;
+        /* Ajustement pour le header à deux niveaux */
+    }
+
+    @media (min-width: 1024px) {
+        .lg\:pt-40 {
+            /* 160px */
+            padding-top: 10rem;
+        }
+    }

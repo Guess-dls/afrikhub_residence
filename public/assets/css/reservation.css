@@ -1,0 +1,92 @@
+/* ----- Body ----- */
+#body {
+  background-color: #f3f5f9; /* couleur douce, uniforme */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: background 0.3s ease;
+}
+
+/* ----- Header ----- */
+header {
+  background-color: rgba(0,109,119,0.9); /* couleur de base conservée */
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border-bottom: 4px solid #00796b; /* accent subtil */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(-1px);
+}
+
+header h1 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  transition: color 0.3s ease;
+}
+
+header h1:hover {
+  color: #33AEFF; /* accent léger au survol */
+}
+
+/* ----- Formulaire ----- */
+form {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ----- Champs du formulaire ----- */
+input.form-control, select.form-control, textarea.form-control {
+  font-size: 0.95rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input.form-control:focus, select.form-control:focus, textarea.form-control:focus {
+  border-color: #00796b;
+  box-shadow: 0 0 5px rgba(0,121,107,0.4);
+}
+
+/* ----- Titres ----- */
+h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+}
+
+h2.text-success {
+  font-weight: bold;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 576px) {
+  #body {
+    font-size: 0.9rem;
+  }
+  form {
+    padding: 1rem !important;
+  }
+  header h1 {
+    font-size: 1.4rem;
+  }
+  button[type="submit"], .btn {
+    width: 100%;
+    padding: 0.7rem;
+  }
+}

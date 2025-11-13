@@ -1,0 +1,68 @@
+.glass-header {
+    background: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+.glass-header:hover {
+    background: rgba(20, 20, 20, 0.65);
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ffc107;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Menu mobile */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100%;
+    z-index: 2000;
+    transition: right 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mobile-menu.active {
+    right: 0;
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.4);
+}
+
+#menu-toggle:focus {
+    outline: none;
+}

@@ -1,0 +1,188 @@
+ /* ---------------- BODY & GLOBAL ---------------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #006d77, #00afb9);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---------------- CARD ---------------- */
+.card {
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* ---------------- LEFT SIDE - FORM ---------------- */
+.card-body {
+  padding: 3rem 2rem;
+  background-color: white;
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+}
+
+.card-body img {
+  margin-bottom: 2rem;
+  max-width: 180px;
+  transition: transform 0.3s ease;
+}
+
+.card-body img:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.card-body p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #004d40;
+}
+
+.form-outline {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  padding: 14px 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.1);
+  color: #004d40;
+}
+
+.form-control:focus {
+  outline: none;
+  border: 2px solid #00b4a2;
+  box-shadow: 0 0 12px rgba(0,180,162,0.3);
+  background: #fff;
+}
+
+label.form-label {
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  color: #999;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  font-size: 0.8rem;
+  color: #00b4a2;
+  background: #fff;
+  padding: 0 4px;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.btn-primary {
+  background: linear-gradient(135deg, #006d77, #00b4a2);
+  border: none;
+  border-radius: 50px;
+  padding: 14px 36px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0,180,162,0.4);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #00b4a2, #006d77);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,180,162,0.6);
+  color: #fff;
+}
+
+/* LINKS */
+.text-muted, .text-dark {
+  transition: all 0.3s ease;
+}
+
+.text-muted:hover, .text-dark:hover {
+  color: #00b4a2;
+  text-decoration: underline;
+}
+
+/* ---------------- RIGHT SIDE - INFO ---------------- */
+.gradient-custom-2 {
+  background: linear-gradient(135deg, #006d77, #00afb9);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeInRight 1s ease forwards;
+}
+
+.gradient-custom-2 h4 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.gradient-custom-2 p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffe;
+}
+
+/* ERROR MESSAGE */
+.text-danger {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ff4b2b;
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: shake 0.5s;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+@keyframes fadeInUp {
+  0% {opacity: 0; transform: translateY(30px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInRight {
+  0% {opacity: 0; transform: translateX(50px);}
+  100% {opacity: 1; transform: translateX(0);}
+}
+
+@keyframes shake {
+  0% {transform: translateX(0);}
+  25% {transform: translateX(-5px);}
+  50% {transform: translateX(5px);}
+  75% {transform: translateX(-5px);}
+  100% {transform: translateX(0);}
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media screen and (max-width: 768px) {
+  .card .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .gradient-custom-2 {
+    display: none;
+  }
+  .card-body {
+    padding: 2rem 1rem;
+  }
+  p, label.form-label, input.form-control, .btn {
+    font-size: 0.9rem;
+  }
+}

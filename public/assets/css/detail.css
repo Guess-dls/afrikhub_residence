@@ -1,0 +1,208 @@
+/* ================== Reset global ================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#body {
+    background-color: #f3f5f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ================== Header ================== */
+header {
+   background-color: rgba(0,109,119,0.9); /* couleur de base conservée */
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border-bottom: 4px solid #00796b; /* accent subtil */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+
+header h1 {
+    font-weight: 700;
+    user-select: none;
+    margin: 0;
+}
+
+/* ================== Boutons ================== */
+.btn {
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.btn-dark {
+    background-color: rgba(0, 109, 119, 0.9) !important;
+    border-color: #004d40 !important;
+    color: white !important;
+}
+
+.btn-dark:hover {
+    background-color: #00796b !important;
+    border-color: #00796b !important;
+}
+
+
+.btn-danger:hover {
+    background-color: #b71c1c !important;
+    border-color: #b71c1c !important;
+}
+
+
+/* ================== Liens ================== */
+a.text-decoration-none {
+    font-weight: 600;
+}
+
+
+/* ================== Album ================== */
+.album-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.album-container > .d-flex {
+    flex-wrap: wrap;
+    gap: 2rem;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+    padding: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+}
+wrap
+.album-container > .d-flex > div {
+    flex: 1;
+    min-width: 280px;
+}
+
+.album-container h3,
+.album-container h4 {
+    color: #00796b;
+    font-weight: 700;
+}
+
+/* ================== Images ================== */
+.cover {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cover:hover {
+    transform: scale(1.05);
+}
+
+.image-scroll-wrapper {
+    display: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    border-top: 1px solid #ddd;
+    margin-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+.image-scroll-wrapper img {
+    height: 160px;
+    margin-right: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease;
+}
+
+.image-scroll-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+/* ================== Lightbox ================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 0 25px white;
+}
+
+.lightbox .close-button,
+.lightbox .nav-button {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 10px;
+    user-select: none;
+}
+
+.lightbox .close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.lightbox .close-button:hover,
+.lightbox .nav-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+/* Affichage quand burger ouvert */
+#menuToggle:checked + .menu-label + #menu-links {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================== Responsive ================== */
+/* ----- Responsive ----- */
+@media (max-width: 576px) {
+  #body {
+    font-size: 0.9rem;
+  }
+    header h1 {
+    font-size: 1.4rem;
+  }
+	.btn {
+    width: 100%;
+    padding: 0.7rem;
+  }
+    #menu-links {
+    width: 50%;
+    padding: 0.7rem;
+  }
+}
